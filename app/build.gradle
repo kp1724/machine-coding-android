@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion rootProject.compileSdk
     defaultConfig {
-        applicationId "com.gopay"
+        applicationId "com.moneyer"
         minSdkVersion rootProject.minSdk
         targetSdkVersion rootProject.targetSdk
         versionCode 1
@@ -40,48 +40,43 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //Kotlin
-    api kotlinDep.stdlib
-    api kotlinDep.coroutines
+    implementation kotlinDep.stdlib
+    implementation kotlinDep.coroutines
 
     //Android
-    api androidDependencies.appCompat
+    implementation androidDependencies.appCompat
     implementation androidDependencies.androidXCore
     implementation androidDependencies.activityKtx
     implementation androidDependencies.fragmentKtx
 
     //DI
-    api daggerDep.core
+    implementation daggerDep.core
     kapt daggerDep.compiler
 
     //Arch components
-    api archComponents.components
+    implementation archComponents.components
     kapt archComponents.componentsCompiler
-    api archComponents.viewModelKtx
+    implementation archComponents.viewModelKtx
 
     //Room
-    api roomDb.core
-    api roomDb.ktx
-    api roomDb.rx
+    implementation roomDb.core
+    implementation roomDb.ktx
 
     //Networking
-    api networking.okhttp
-    api networking.okhttpLog
-    api networking.gson
-    api networking.retrofit
-    api networking.retrofitRx
-    api networking.retrofitGson
+    implementation networking.okhttp
+    implementation networking.okhttpLog
+    implementation networking.gson
+    implementation networking.retrofit
+    implementation networking.retrofitRx
+    implementation networking.retrofitGson
 
     //UI
-    api ui.constraintLayout
-    api ui.recyclerview
-    api ui.material
-    api ui.picasso
-    api ui.picassoOkHttp
-    api ui.lottie
+    implementation ui.constraintLayout
+    implementation ui.recyclerview
+    implementation ui.material
+    implementation ui.picasso
+    implementation ui.picassoOkHttp
+    implementation ui.lottie
 
-    //rx
-    api rx.java
-    api rx.android
-    api rx.kotlin
 
 }

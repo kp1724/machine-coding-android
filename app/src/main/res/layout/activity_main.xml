@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.gopay.customviews.FullScreenView
+    <com.moneyer.customviews.FullScreenView
         android:id="@+id/fullScreenView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
