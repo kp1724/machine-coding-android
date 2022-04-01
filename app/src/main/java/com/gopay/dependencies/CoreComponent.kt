@@ -1,10 +1,13 @@
 package com.gopay.dependencies
 
+import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.RoomDatabase
 import com.google.gson.Gson
 import com.gopay.dispatcher.CoroutineDispatcherProvider
+import com.gopay.viewmodel.MainActivityViewModel
 import com.squareup.picasso.Picasso
+import dagger.BindsInstance
 import dagger.Component
 import retrofit2.Retrofit
 import javax.inject.Singleton
@@ -12,7 +15,6 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [
-        AppModule::class,
         NetworkModule::class,
         StorageModule::class,
         ImageModule::class,
@@ -20,15 +22,11 @@ import javax.inject.Singleton
 )
 interface CoreComponent {
 
-    fun retrofit(): Retrofit
+    @Component.Factory
+    interface Factory {
+        fun create(@BindsInstance applicationContext: Context): CoreComponent
+    }
 
-    fun gson(): Gson
+    fun mainActivityComponent(): MainActivityComponent.Factory
 
-    fun sharedPreferences(): SharedPreferences
-
-    fun roomDb(): RoomDatabase
-
-    fun picasso(): Picasso
-
-    fun coroutineDispatcher(): CoroutineDispatcherProvider
 }

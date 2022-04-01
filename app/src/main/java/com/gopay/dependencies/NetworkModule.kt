@@ -4,6 +4,7 @@ import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.gopay.BuildConfig
+import com.gopay.usecase.ApiClient
 import dagger.Module
 import dagger.Provides
 import okhttp3.Cache
@@ -74,4 +75,8 @@ class NetworkModule {
     fun providesGsonConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
     }
+
+    @Provides
+    @Singleton
+    fun provideApiClient(retrofit: Retrofit) = retrofit.create(ApiClient::class.java)
 }
