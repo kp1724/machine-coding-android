@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -24,16 +23,11 @@ android {
         }
     }
 
-    //dynamicFeatures = [":{MODULE_NAME}"]
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 }
 
 dependencies {
@@ -45,38 +39,31 @@ dependencies {
 
     //Android
     implementation androidDependencies.appCompat
-    implementation androidDependencies.androidXCore
-    implementation androidDependencies.activityKtx
-    implementation androidDependencies.fragmentKtx
 
     //DI
     implementation daggerDep.core
     kapt daggerDep.compiler
+    //adding this to solve issue due to dagger, link:https://youtrack.jetbrains.com/issue/KT-45885
+    kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.3.0")
 
     //Arch components
-    implementation archComponents.components
-    kapt archComponents.componentsCompiler
     implementation archComponents.viewModelKtx
 
     //Room
     implementation roomDb.core
-    implementation roomDb.ktx
+    annotationProcessor roomDb.compiler
 
     //Networking
-    implementation networking.okhttp
     implementation networking.okhttpLog
-    implementation networking.gson
     implementation networking.retrofit
-    implementation networking.retrofitRx
     implementation networking.retrofitGson
 
     //UI
     implementation ui.constraintLayout
     implementation ui.recyclerview
-    implementation ui.material
     implementation ui.picasso
-    implementation ui.picassoOkHttp
     implementation ui.lottie
+    implementation ui.cardview
 
 
 }
