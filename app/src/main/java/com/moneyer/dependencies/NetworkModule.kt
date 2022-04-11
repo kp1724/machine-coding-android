@@ -70,5 +70,5 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiClient(retrofit: Retrofit) = retrofit.create(ApiClient::class.java)
+    fun provideApiClient(retrofit: Retrofit): ApiClient = retrofit.create(ApiClient::class.java)
 }
