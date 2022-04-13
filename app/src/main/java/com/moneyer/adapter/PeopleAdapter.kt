@@ -10,7 +10,7 @@ import com.moneyer.responses.StarWarsPeople
 
 class PeopleAdapter :
     RecyclerView.Adapter<PeopleAdapter.PeopleViewHolder>() {
-    private var list: MutableList<StarWarsPeople> = mutableListOf()
+    var list: MutableList<StarWarsPeople> = mutableListOf()
     fun addData(list: MutableList<StarWarsPeople>) {
         this.list = list
     }
