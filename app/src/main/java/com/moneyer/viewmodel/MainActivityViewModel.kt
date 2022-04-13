@@ -19,6 +19,7 @@ class MainActivityViewModel @Inject constructor(
 
     fun getPeople() {
         responseLiveData.value = FullScreenViewType.LoadingView
+        //testing github action temp commit
         viewModelScope.launch {
             getPeopleUseCase.getPeople(
                 onSuccess = {
