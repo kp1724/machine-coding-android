@@ -2,17 +2,17 @@
 
 buildscript {
     ext {
-        compileSdk = 31
+        compileSdk = 34
         buildTools = '31.0.0'
         minSdk = 24
         targetSdk = 31
 
         /*https://blog.jetbrains.com/kotlin/category/releases/*/
-        kotlinVersion = '1.6.0'
+        kotlinVersion = '1.9.20'
         /*https://github.com/Kotlin/kotlinx.coroutines/releases*/
-        coroutinesVersion = '1.6.1'
+        coroutinesVersion = '1.7.3'
         /*https://developer.android.com/jetpack/androidx/releases/appcompat*/
-        appCompatVersion = '1.4.1'
+        appCompatVersion = '1.6.1'
         /*https://developer.android.com/jetpack/androidx/releases/core*/
         androidxCoreVersion = '1.7.0'
         /*https://developer.android.com/jetpack/androidx/releases/activity*/
@@ -33,20 +33,20 @@ buildscript {
         ]
 
         /*https://github.com/google/dagger#dagger*/
-        daggerVersion = '2.28.3'
+        daggerVersion = '2.48.1'
         daggerDep = [
                 core    : "com.google.dagger:dagger:${daggerVersion}",
                 compiler: "com.google.dagger:dagger-compiler:${daggerVersion}",
         ]
 
         /*https://dl.google.com/dl/android/maven2/index.html*/
-        archComponentsVersion = '2.4.1'
+        archComponentsVersion = '2.6.2'
         archComponents = [
                 viewModelKtx      : "androidx.lifecycle:lifecycle-viewmodel-ktx:${archComponentsVersion}",
         ]
 
         /*https://developer.android.com/jetpack/androidx/releases/room*/
-        roomDbVersion = '2.5.0-alpha01'
+        roomDbVersion = '2.6.0'
         roomDb = [
                 core    : "androidx.room:room-runtime:${roomDbVersion}",
                 compiler: "androidx.room:room-compiler:${roomDbVersion}",
@@ -100,6 +100,6 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
 }
