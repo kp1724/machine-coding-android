@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion(rootProject.compileSdk)
+    compileSdkVersion rootProject.compileSdk
     defaultConfig {
         applicationId "com.moneyer"
         minSdkVersion rootProject.minSdk
@@ -35,6 +35,7 @@ android {
         checkDependencies true
         lintConfig file('lint.xml')
     }
+    namespace 'com.moneyer'
 
 }
 

@@ -1,10 +1,10 @@
 package com.moneyer
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.moneyer.dependencies.MainActivityComponent
 import com.moneyer.customviews.FullScreenView
+import com.moneyer.dependencies.MainActivityComponent
 import com.moneyer.viewmodel.MainActivityViewModel
 import com.moneyer.viewmodel.ViewModelFactory
 import javax.inject.Inject
@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModelFactory: ViewModelFactory
     private lateinit var fullScreenView: FullScreenView
     private lateinit var viewModel:MainActivityViewModel
-    lateinit var mainActivityComponent: MainActivityComponent
+    private lateinit var mainActivityComponent: MainActivityComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         mainActivityComponent = (application as App).coreComponent.mainActivityComponent().create()
