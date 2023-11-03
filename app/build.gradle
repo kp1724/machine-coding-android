@@ -57,10 +57,6 @@ dependencies {
     //Arch components
     implementation archComponents.viewModelKtx
 
-    //Room
-    implementation roomDb.core
-    annotationProcessor roomDb.compiler
-
     //Networking
     implementation networking.okhttpLog
     implementation networking.retrofit

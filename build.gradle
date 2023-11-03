@@ -45,13 +45,6 @@ buildscript {
                 viewModelKtx      : "androidx.lifecycle:lifecycle-viewmodel-ktx:${archComponentsVersion}",
         ]
 
-        /*https://developer.android.com/jetpack/androidx/releases/room*/
-        roomDbVersion = '2.6.0'
-        roomDb = [
-                core    : "androidx.room:room-runtime:${roomDbVersion}",
-                compiler: "androidx.room:room-compiler:${roomDbVersion}",
-        ]
-
         /*https://github.com/square/okhttp/blob/master/CHANGELOG.md*/
         okhttpVersion = '5.0.0-alpha.2'
         /*https://github.com/square/retrofit/blob/master/CHANGELOG.md*/
